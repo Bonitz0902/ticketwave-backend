@@ -28,4 +28,8 @@ public class MovieController {
         return movieService.getMovieByTitle(movieTitle);
     }
 
+    @GetMapping("/available")
+    public List<MovieResponse> getAllAvailableMovies() {
+        return movieService.getAllAvailableMovies();
+    }
 }
