@@ -5,19 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "movies")
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String movieTitle;
+    private boolean isAvailable;
 
     public Movie() {
     }
 
-    public Movie(Long id, String movieTitle) {
+    public Movie(Long id, String movieTitle, boolean isAvailable) {
         this.id = id;
         this.movieTitle = movieTitle;
+        this.isAvailable = isAvailable;
     }
 
     public String getMovieTitle() {
@@ -34,5 +36,13 @@ public class Movie {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }
