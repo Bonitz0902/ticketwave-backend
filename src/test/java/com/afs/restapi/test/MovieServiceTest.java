@@ -14,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -63,5 +64,20 @@ public class MovieServiceTest {
 
         // Then
         assertEquals(2, result.size());
+    }
+
+    @Test
+    void should_return_search_movies_when_search_movies_given_query(){
+        String query = "Justice";
+        List<Movie> expectedResult = new ArrayList<>();
+        expectedResult.add(new Movie(2L, "Justice League", false));
+
+        when(movieRepository.findByMovieTitleContainingIgnoreCase(query)).thenReturn(expectedResult);
+
+        List<MovieResponse> actualResult = movieService.getMovieByTitle(query);
+
+        assertThat(actualResult.get(0).getMovieTitle()).isEqualTo(expectedResult.get(0).getMovieTitle());
+
+
     }
 }
