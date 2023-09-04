@@ -27,4 +27,12 @@ public class MovieService {
                 .collect(Collectors.toList());
         return movieResponses;
     }
+
+    public List<MovieResponse> getMovieByTitle(String movieRequest){
+        return movieRepository.findByMovieTitleContainingIgnoreCase(movieRequest)
+                .stream()
+                .map(movieMapper::toResponse)
+                .collect(Collectors.toList());
+
+    }
 }
