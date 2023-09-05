@@ -5,6 +5,14 @@ public class LocationResponse {
     private Long locationId;
     private String locationName;
 
+    public LocationResponse(){
+    }
+
+    public LocationResponse(Long locationId, String locationName) {
+        this.locationId = locationId;
+        this.locationName = locationName;
+    }
+
     public Long getLocationId() {
         return locationId;
     }

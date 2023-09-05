@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class LocationMapper {
 
+    public LocationMapper(){
+    }
+
     public LocationResponse toResponse(Location location) {
         LocationResponse locationResponse = new LocationResponse();
         BeanUtils.copyProperties(location, locationResponse);

@@ -9,15 +9,13 @@ public class Location {
     private Long locationId;
     private String locationName;
 
-    public Location(){
+    public Location() {
     }
 
-    public Location(Long id, String locationName){
+    public Location(Long id, String locationName) {
         this.locationId = id;
         this.locationName = locationName;
     }
-
-
 
     public Long getLocationId() {
         return locationId;

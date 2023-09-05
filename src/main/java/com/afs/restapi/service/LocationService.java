@@ -29,5 +29,4 @@ public class LocationService {
                 .map(locationMapper::toResponse)
                 .collect(Collectors.toList());
     }
-
 }
