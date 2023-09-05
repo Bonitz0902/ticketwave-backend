@@ -1,5 +1,6 @@
 package com.afs.restapi.service;
 
+import com.afs.restapi.exception.MovieNotFoundException;
 import com.afs.restapi.entity.Movie;
 import com.afs.restapi.mappers.MovieMapper;
 import com.afs.restapi.mappers.MovieResponse;
@@ -30,12 +31,10 @@ public class MovieService {
                 .collect(Collectors.toList());
     }
 
-    public List<MovieResponse> getMovieByTitle(String movieRequest){
-        return movieRepository.findByMovieTitleContainingIgnoreCase(movieRequest)
-                .stream()
-                .map(movieMapper::toResponse)
-                .collect(Collectors.toList());
-
+    public MovieResponse findById(Long id) {
+        Movie movie = movieRepository.findById(id)
+                .orElseThrow(MovieNotFoundException::new);
+        return movieMapper.toResponse(movie);
     }
 
     public List<MovieResponse> getAllAvailableMovies() {
