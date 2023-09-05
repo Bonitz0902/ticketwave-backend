@@ -67,10 +67,8 @@ public class MovieServiceTest {
 
     @Test
     void should_return_movie_when_get_movie_given_id(){
-        String query = "Avenge";
-        Movie expectedResult = new Movie(2L, "Justice League", false);
-        expectedResult.add(new Movie(1L, "Avengers", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr"));
-
+        Long id = 2L;
+        Movie expectedResult = new Movie(2L, "Justice League", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr");
         when(movieRepository.findById(id)).thenReturn(Optional.of(expectedResult));
 
         MovieResponse actualResult = movieService.findById(id);
