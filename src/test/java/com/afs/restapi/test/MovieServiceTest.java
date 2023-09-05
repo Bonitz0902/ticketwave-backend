@@ -1,6 +1,7 @@
 package com.afs.restapi.test;
 
 import com.afs.restapi.entity.Movie;
+import com.afs.restapi.exception.MovieNotFoundException;
 import com.afs.restapi.mappers.MovieResponse;
 import com.afs.restapi.repository.MovieRepository;
 import com.afs.restapi.service.MovieService;
@@ -13,9 +14,11 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 
@@ -63,17 +66,27 @@ public class MovieServiceTest {
     }
 
     @Test
-    void should_return_search_movies_when_search_movies_given_query(){
-        String query = "Avenge";
-        List<Movie> expectedResult = new ArrayList<>();
-        expectedResult.add(new Movie(1L, "Avengers", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr"));
+    void should_return_movie_when_get_movie_given_id(){
+        Long id = 2L;
+        Movie expectedResult = new Movie(2L, "Justice League", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr");
+        when(movieRepository.findById(id)).thenReturn(Optional.of(expectedResult));
 
-        when(movieRepository.findByMovieTitleContainingIgnoreCase(query)).thenReturn(expectedResult);
+        MovieResponse actualResult = movieService.findById(id);
 
-        List<MovieResponse> actualResult = movieService.getMovieByTitle(query);
+        assertEquals(expectedResult.getId(), actualResult.getId());
+        assertEquals(expectedResult.getMovieTitle(), actualResult.getMovieTitle());
+    }
 
-        assertThat(actualResult.get(0).getMovieTitle()).isEqualTo(expectedResult.get(0).getMovieTitle());
+    @Test
+    void should_return_movie_not_found_when_get_movie_given_invalid_id() {
+    //given
+        Long invalidId = 999L;
 
+     //when
+        MovieNotFoundException movieNotFoundException = assertThrows(MovieNotFoundException.class, () ->
+                movieService.findById(invalidId));
 
+     //then
+        assertEquals("movie not found", movieNotFoundException.getMessage());
     }
 }
