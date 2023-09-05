@@ -1,11 +1,11 @@
-INSERT INTO movies (movie_title, is_available) VALUES
-    ('The Shawshank Redemption',true),
-    ('The Godfather',true),
-    ('The Dark Knight',true),
-    ('Pulp Fiction',true),
-    ('Schindler''s List',true),
-    ('Forrest Gump',true),
-    ('Fight Club',true),
-    ('The Matrix',true),
-    ('Goodfellas',false),
-    ('The Silence of the Lambs',true);
+INSERT INTO movies (movie_title, is_available, image_url, description, rating, director, genre) VALUES
+    ('The Shawshank Redemption', true, 'https://c8.alamy.com/comp/2JH2MYR/robbinsposter-the-shawshank-redemption-1994-2JH2MYR.jpg', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', 9.3, 'Frank Darabont', 'Drama'),
+    ('The Godfather', true, 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg', 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', 9.2, 'Francis Ford Coppola', 'Crime, Drama'),
+    ('The Dark Knight', true, 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg', 'When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.', 9.0, 'Christopher Nolan', 'Action, Crime, Drama'),
+    ('Pulp Fiction', true, 'https://www.originalfilmart.com/cdn/shop/products/pulp_fiction_1994_teaser_linen_original_film_art_f.jpg?v=1610161504', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.', 8.9, 'Quentin Tarantino', 'Crime, Drama'),
+    ('Schindler''s List', true, 'https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg', 'In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.', 8.9, 'Steven Spielberg', 'Biography, Drama, History'),
+    ('Forrest Gump', true, 'https://w0.peakpx.com/wallpaper/1/639/HD-wallpaper-forrest-gump-love-movie.jpg', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.', 8.8, 'Robert Zemeckis', 'Drama, Romance'),
+    ('Fight Club', true, 'https://i.pinimg.com/originals/84/48/0b/84480bf313c6606280325fc0c22f9a91.jpg', 'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.', 8.8, 'David Fincher', 'Drama'),
+    ('The Matrix', true, 'https://c8.alamy.com/comp/2JH2N9A/pantolianofishburnereevesposter-the-matrix-1999-2JH2N9A.jpg', 'A computer programmer discovers that reality as he knows it is a simulation created by machines, and he joins a rebellion to break free.', 8.7, 'The Wachowskis', 'Action, Sci-Fi'),
+    ('Goodfellas', false, 'https://m.media-amazon.com/images/I/61SfN2qKXRL._AC_UF894,1000_QL80_.jpg', 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.', 8.7, 'Martin Scorsese', 'Biography, Crime, Drama'),
+    ('The Silence of the Lambs', true, 'https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg', 'A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.', 8.6, 'Jonathan Demme', 'Crime, Drama, Thriller');

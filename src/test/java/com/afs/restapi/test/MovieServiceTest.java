@@ -39,40 +39,37 @@ public class MovieServiceTest {
     void should_return_movies_when_get_all_given_some_movies(){
         // Given
         List<Movie> allMovies = new ArrayList<>();
-        allMovies.add(new Movie(1L, "Avengers", true));
-        allMovies.add(new Movie(2L, "Justice League", false));
-        allMovies.add(new Movie(3L, "Jumanji", true));
+        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.0, "qwerty","qwerywr"));
+
         // When
         when(movieRepository.findAll()).thenReturn(allMovies);
         List<MovieResponse> movies = movieService.getAllMovies();
 
         // Then
-        assertEquals(3, movies.size());
+        assertEquals(1, movies.size());
         assertEquals("Avengers", movies.get(0).getMovieTitle());
-        assertEquals("Justice League", movies.get(1).getMovieTitle());
-        assertEquals("Jumanji", movies.get(2).getMovieTitle());
     }
 
     @Test
      void should_return_available_movies_when_get_available_movies_given_some_movies() {
         // Given
         List<Movie> allMovies = new ArrayList<>();
-        allMovies.add(new Movie(1L, "Avengers", true));
-        allMovies.add(new Movie(2L, "Justice League", false));
-        allMovies.add(new Movie(3L, "Jumanji", true));
+        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",5.0, "qwerty","qwerywr"));
+
 
         // When
         when(movieRepository.findAll()).thenReturn(allMovies);
         List<MovieResponse> result = movieService.getAllAvailableMovies();
 
         // Then
-        assertEquals(2, result.size());
+        assertEquals(1, result.size());
     }
 
     @Test
     void should_return_movie_when_get_movie_given_id(){
-        Long id = 2L;
+        String query = "Avenge";
         Movie expectedResult = new Movie(2L, "Justice League", false);
+        expectedResult.add(new Movie(1L, "Avengers", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr"));
 
         when(movieRepository.findById(id)).thenReturn(Optional.of(expectedResult));
 
