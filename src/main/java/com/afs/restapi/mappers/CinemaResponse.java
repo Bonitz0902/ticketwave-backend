@@ -2,25 +2,27 @@ package com.afs.restapi.mappers;
 
 public class CinemaResponse {
 
-    private Long id;
-    private String cinemaName;
+    private Long cinemaId;
     private String locationName;
+    private String movieTitle;
+    private String cinemaName;
 
     public CinemaResponse() {
     }
 
-    public CinemaResponse(Long id, String cinemaName, String locationName) {
-        this.id = id;
+    public CinemaResponse(Long cinemaId, Long locationId, Long movieId, String cinemaName, String locationName, String movieTitle) {
+        this.cinemaId = cinemaId;
         this.cinemaName = cinemaName;
         this.locationName = locationName;
+        this.movieTitle = movieTitle;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCinemaId() {
+        return cinemaId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCinemaId(Long cinemaId) {
+        this.cinemaId = cinemaId;
     }
 
     public String getCinemaName() {
@@ -37,5 +39,13 @@ public class CinemaResponse {
 
     public void setLocationName(String locationName) {
         this.locationName = locationName;
+    }
+
+    public String getMovieTitle() {
+        return movieTitle;
+    }
+
+    public void setMovieTitle(String movieTitle) {
+        this.movieTitle = movieTitle;
     }
 }

@@ -2,8 +2,7 @@ package com.afs.restapi.entity;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "cinema")
+@Entity(name = "cinemas")
 public class Cinema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,17 +10,14 @@ public class Cinema {
     private Long cinemaId;
 
     @ManyToOne
-    @JoinColumn(name = "location_id") // This should match the column name in the database
+    @JoinColumn(name = "location_id", referencedColumnName = "location_id")
     private Location location;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id") // This should match the column name in the database
+    @JoinColumn(name = "movie_id", referencedColumnName = "id")
     private Movie movie;
 
-    @Column(name = "cinema_name")
     private String cinemaName;
-
-    // Constructors, getters, and setters
 
     public Cinema() {
     }
