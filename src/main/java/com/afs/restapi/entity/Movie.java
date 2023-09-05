@@ -1,9 +1,6 @@
 package com.afs.restapi.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "movies")
 public class Movie {
@@ -12,14 +9,25 @@ public class Movie {
     private Long id;
     private String movieTitle;
     private boolean isAvailable;
+    @Column(name = "image_url")
+    private String imageUrl;
+    private String description;
+    private Double rating;
+    private String director;
+    private String genre;
 
     public Movie() {
     }
 
-    public Movie(Long id, String movieTitle, boolean isAvailable) {
+    public Movie(Long id, String movieTitle, boolean isAvailable, String imageUrl, String description, double rating, String director, String genre) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.isAvailable = isAvailable;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.rating = rating;
+        this.director = director;
+        this.genre = genre;
     }
 
     public String getMovieTitle() {
@@ -44,5 +52,45 @@ public class Movie {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

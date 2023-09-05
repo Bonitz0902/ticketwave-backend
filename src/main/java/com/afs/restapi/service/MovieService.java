@@ -26,7 +26,11 @@ public class MovieService {
         List<Movie> movies = movieRepository.findAll();
 
         return movies.stream()
-                .map(movieMapper::toResponse)
+                .map(movie -> {
+                    MovieResponse movieResponse = movieMapper.toResponse(movie);
+                    movieResponse.setImageUrl(movie.getImageUrl());
+                    return movieResponse;
+                })
                 .collect(Collectors.toList());
     }
 

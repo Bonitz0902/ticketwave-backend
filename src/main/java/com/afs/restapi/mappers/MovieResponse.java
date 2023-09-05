@@ -4,13 +4,23 @@ public class MovieResponse {
 
     private Long id;
     private String movieTitle;
+    private String imageUrl;
+    private String description;
+    private Double rating;
+    private String director;
+    private String genre;
 
     public MovieResponse(){
     }
 
-    public MovieResponse(Long id, String movieTitle) {
+    public MovieResponse(Long id, String movieTitle, String imageUrl, String description, Double rating, String director, String genre) {
         this.id = id;
         this.movieTitle = movieTitle;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.rating = rating;
+        this.director = director;
+        this.genre = genre;
     }
 
     public String getMovieTitle() {
@@ -27,5 +37,45 @@ public class MovieResponse {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
