@@ -25,8 +25,8 @@ public class AccountService {
         accountRepository.save(account);
     }
 
-    public AccountResponse getAccountByName(String name) {
-        Account account = accountRepository.findByAccountName(name);
+    public AccountResponse getAccountByEmail(String name) {
+        Account account = accountRepository.findByAccountEmail(name);
         return accountMapper.toResponse(account);
     }
 }

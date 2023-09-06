@@ -23,8 +23,10 @@ public class AccountController {
         accountService.create(accountRequest);
     }
 
-    @GetMapping("/{accountName}")
-    public AccountResponse getAccount(@PathVariable String accountName){
-        return accountService.getAccountByName(accountName);
+    @GetMapping("/{accountEmail}")
+    public AccountResponse getAccount(@PathVariable String accountEmail){
+        return accountService.getAccountByEmail(accountEmail);
     }
+
+
 }
