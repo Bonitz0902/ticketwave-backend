@@ -1,4 +1,4 @@
-INSERT INTO accounts (account_name, account_password, account_email)
+INSERT INTO accounts (account_name, account_email, account_password)
 VALUES
     ('JohnDoe', 'john.doe@example.com', 'Password123'),
     ('JaneSmith', 'jane.smith@example.com', 'SecurePass789'),
