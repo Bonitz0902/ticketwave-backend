@@ -53,7 +53,7 @@ public class MovieService {
     }
 
     public List<MovieResponse> getTopRatedMovies() {
-        List<Movie> movies = movieRepository.findTop10ByOrderByRatingDesc();
+        List<Movie> movies = movieRepository.findTop5ByOrderByRatingDesc();
 
         return movies.stream()
                 .map(movieMapper::toResponse)

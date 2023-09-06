@@ -39,7 +39,7 @@ public class MovieServiceTest {
     void should_return_movies_when_get_all_given_some_movies(){
         // Given
         List<Movie> allMovies = new ArrayList<>();
-        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.0, "qwerty","qwerywr"));
+        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.0, "qwerty","qwerywr", "qwerty"));
 
         // When
         when(movieRepository.findAll()).thenReturn(allMovies);
@@ -54,7 +54,7 @@ public class MovieServiceTest {
      void should_return_available_movies_when_get_available_movies_given_some_movies() {
         // Given
         List<Movie> allMovies = new ArrayList<>();
-        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",5.0, "qwerty","qwerywr"));
+        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",5.0, "qwerty","qwerywr", "qwerty"));
 
 
         // When
@@ -68,7 +68,7 @@ public class MovieServiceTest {
     @Test
     void should_return_movie_when_get_movie_given_id(){
         Long id = 2L;
-        Movie expectedResult = new Movie(2L, "Justice League", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr");
+        Movie expectedResult = new Movie(2L, "Justice League", false, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.6, "qwerty","qwerywr", "qwerty");
         when(movieRepository.findById(id)).thenReturn(Optional.of(expectedResult));
 
         MovieResponse actualResult = movieService.findById(id);
