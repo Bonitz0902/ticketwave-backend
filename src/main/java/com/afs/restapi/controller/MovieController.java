@@ -29,4 +29,9 @@ public class MovieController {
     public List<MovieResponse> getAllAvailableMovies() {
         return movieService.getAllAvailableMovies();
     }
+
+    @GetMapping("/top-rated")
+    public List<MovieResponse> getTopRatedMovies() {
+        return movieService.getTopRatedMovies();
+    }
 }

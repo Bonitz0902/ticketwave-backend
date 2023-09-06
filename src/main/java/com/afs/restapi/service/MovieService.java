@@ -51,4 +51,12 @@ public class MovieService {
                 .map(movieMapper::toResponse)
                 .collect(Collectors.toList());
     }
+
+    public List<MovieResponse> getTopRatedMovies() {
+        List<Movie> movies = movieRepository.findTop10ByOrderByRatingDesc();
+
+        return movies.stream()
+                .map(movieMapper::toResponse)
+                .collect(Collectors.toList());
+    }
 }
