@@ -9,11 +9,12 @@ public class MovieResponse {
     private Double rating;
     private String director;
     private String genre;
+    private String imageUrlLandscape;
 
     public MovieResponse(){
     }
 
-    public MovieResponse(Long id, String movieTitle, String imageUrl, String description, Double rating, String director, String genre) {
+    public MovieResponse(Long id, String movieTitle, String imageUrl, String description, Double rating, String director, String genre, String imageUrlLandscape) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.imageUrl = imageUrl;
@@ -21,6 +22,7 @@ public class MovieResponse {
         this.rating = rating;
         this.director = director;
         this.genre = genre;
+        this.imageUrlLandscape = imageUrlLandscape;
     }
 
     public String getMovieTitle() {
@@ -77,5 +79,13 @@ public class MovieResponse {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getImageUrlLandscape() {
+        return imageUrlLandscape;
+    }
+
+    public void setImageUrlLandscape(String imageUrlLandscape) {
+        this.imageUrlLandscape = imageUrlLandscape;
     }
 }

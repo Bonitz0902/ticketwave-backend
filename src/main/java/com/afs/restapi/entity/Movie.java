@@ -16,10 +16,12 @@ public class Movie {
     private String director;
     private String genre;
 
+    private String imageUrlLandscape;
+
     public Movie() {
     }
 
-    public Movie(Long id, String movieTitle, boolean isAvailable, String imageUrl, String description, double rating, String director, String genre) {
+    public Movie(Long id, String movieTitle, boolean isAvailable, String imageUrl, String description, double rating, String director, String genre, String imageUrlLandscape) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.isAvailable = isAvailable;
@@ -28,6 +30,7 @@ public class Movie {
         this.rating = rating;
         this.director = director;
         this.genre = genre;
+        this.imageUrlLandscape = imageUrlLandscape;
     }
 
     public String getMovieTitle() {
@@ -92,5 +95,13 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getImageUrlLandscape() {
+        return imageUrlLandscape;
+    }
+
+    public void setImageUrlLandscape(String imageUrlLandscape) {
+        this.imageUrlLandscape = imageUrlLandscape;
     }
 }
