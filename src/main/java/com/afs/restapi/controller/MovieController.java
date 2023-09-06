@@ -1,6 +1,6 @@
 package com.afs.restapi.controller;
 
-import com.afs.restapi.mappers.MovieResponse;
+import com.afs.restapi.mappers.movie.MovieResponse;
 import com.afs.restapi.service.MovieService;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package com.afs.restapi.controller;
 
-import com.afs.restapi.mappers.LocationResponse;
+import com.afs.restapi.mappers.location.LocationResponse;
 import com.afs.restapi.service.LocationService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,8 +1,7 @@
 package com.afs.restapi.controller;
 
-import com.afs.restapi.exception.MovieScheduleNotFoundException;
-import com.afs.restapi.mappers.MovieScheduleRequest;
-import com.afs.restapi.mappers.MovieScheduleResponse;
+import com.afs.restapi.mappers.movieSchedule.MovieScheduleRequest;
+import com.afs.restapi.mappers.movieSchedule.MovieScheduleResponse;
 import com.afs.restapi.service.MovieScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

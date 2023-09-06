@@ -2,7 +2,7 @@ package com.afs.restapi.test;
 
 import com.afs.restapi.entity.Movie;
 import com.afs.restapi.exception.MovieNotFoundException;
-import com.afs.restapi.mappers.MovieResponse;
+import com.afs.restapi.mappers.movie.MovieResponse;
 import com.afs.restapi.repository.MovieRepository;
 import com.afs.restapi.service.MovieService;
 import org.junit.jupiter.api.BeforeEach;

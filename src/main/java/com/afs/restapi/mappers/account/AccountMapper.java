@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers;
+package com.afs.restapi.mappers.account;
 
 import com.afs.restapi.entity.Account;
 import org.springframework.beans.BeanUtils;

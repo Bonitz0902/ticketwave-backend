@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers;
+package com.afs.restapi.mappers.cinema;
 
 public class CinemaResponse {
 

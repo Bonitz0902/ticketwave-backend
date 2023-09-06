@@ -1,28 +1,16 @@
-package com.afs.restapi.mappers;
+package com.afs.restapi.mappers.account;
 
-public class AccountResponse {
-    private Long accountId;
+
+public class AccountRequest {
+
     private String accountName;
     private String accountEmail;
     private String accountPassword;
 
-    public AccountResponse(){
-
-    }
-
-    public AccountResponse(Long accountId, String accountName, String accountEmail, String accountPassword) {
-        this.accountId = accountId;
+    public AccountRequest(String accountName, String accountEmail, String accountPassword) {
         this.accountName = accountName;
         this.accountEmail = accountEmail;
         this.accountPassword = accountPassword;
-    }
-
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
     }
 
     public String getAccountName() {
