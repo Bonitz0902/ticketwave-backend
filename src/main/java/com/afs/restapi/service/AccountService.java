@@ -1,9 +1,9 @@
 package com.afs.restapi.service;
 
 import com.afs.restapi.entity.Account;
-import com.afs.restapi.mappers.AccountMapper;
-import com.afs.restapi.mappers.AccountRequest;
-import com.afs.restapi.mappers.AccountResponse;
+import com.afs.restapi.mappers.account.AccountMapper;
+import com.afs.restapi.mappers.account.AccountRequest;
+import com.afs.restapi.mappers.account.AccountResponse;
 import com.afs.restapi.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

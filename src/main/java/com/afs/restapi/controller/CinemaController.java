@@ -1,6 +1,6 @@
 package com.afs.restapi.controller;
 
-import com.afs.restapi.mappers.CinemaResponse;
+import com.afs.restapi.mappers.cinema.CinemaResponse;
 import com.afs.restapi.service.CinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

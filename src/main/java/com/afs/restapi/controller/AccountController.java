@@ -1,8 +1,7 @@
 package com.afs.restapi.controller;
 
-import com.afs.restapi.entity.Account;
-import com.afs.restapi.mappers.AccountRequest;
-import com.afs.restapi.mappers.AccountResponse;
+import com.afs.restapi.mappers.account.AccountRequest;
+import com.afs.restapi.mappers.account.AccountResponse;
 import com.afs.restapi.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

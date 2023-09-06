@@ -2,8 +2,8 @@ package com.afs.restapi.service;
 
 import com.afs.restapi.exception.MovieNotFoundException;
 import com.afs.restapi.entity.Movie;
-import com.afs.restapi.mappers.MovieMapper;
-import com.afs.restapi.mappers.MovieResponse;
+import com.afs.restapi.mappers.movie.MovieMapper;
+import com.afs.restapi.mappers.movie.MovieResponse;
 import com.afs.restapi.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

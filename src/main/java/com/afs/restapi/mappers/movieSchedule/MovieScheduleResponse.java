@@ -1,31 +1,44 @@
-package com.afs.restapi.mappers;
+package com.afs.restapi.mappers.movieSchedule;
+
+import com.afs.restapi.entity.Cinema;
+import com.afs.restapi.entity.Movie;
 
 import java.util.Date;
 
-public class MovieScheduleRequest {
+public class MovieScheduleResponse {
     private Long scheduleId;
-    private Long cinemaId;
+    private Cinema cinema;
     private Date startDate;
     private Date endDate;
     private String startTime;
     private String endTime;
 
+    public MovieScheduleResponse(){
+    }
 
-    public MovieScheduleRequest(Long scheduleId, Long cinemaId,  Date startDate, Date endDate, String startTime, String endTime) {
-        this.scheduleId = scheduleId;
-        this.cinemaId = cinemaId;
+    public MovieScheduleResponse(Long id, Cinema cinema, Date startDate, Date endDate, String startTime, String endTime) {
+        this.scheduleId = id;
+        this.cinema = cinema;
         this.startDate = startDate;
         this.endDate = endDate;
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    public Long getCinemaId() {
-        return cinemaId;
+    public Long getScheduleId() {
+        return scheduleId;
     }
 
-    public void setCinemaId(Long cinemaId) {
-        this.cinemaId = cinemaId;
+    public void setScheduleId(Long scheduleId) {
+        this.scheduleId = scheduleId;
+    }
+
+    public Cinema getCinema() {
+        return cinema;
+    }
+
+    public void setCinema(Cinema cinema) {
+        this.cinema = cinema;
     }
 
     public Date getStartDate() {
@@ -58,13 +71,5 @@ public class MovieScheduleRequest {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public Long getScheduleId() {
-        return scheduleId;
-    }
-
-    public void setScheduleId(Long scheduleId) {
-        this.scheduleId = scheduleId;
     }
 }

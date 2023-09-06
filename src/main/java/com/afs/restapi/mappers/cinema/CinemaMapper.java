@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers;
+package com.afs.restapi.mappers.cinema;
 
 import com.afs.restapi.entity.Cinema;
 import org.springframework.beans.BeanUtils;

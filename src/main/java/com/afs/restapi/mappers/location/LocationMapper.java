@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers;
+package com.afs.restapi.mappers.location;
 
 import com.afs.restapi.entity.Location;
 import org.springframework.beans.BeanUtils;

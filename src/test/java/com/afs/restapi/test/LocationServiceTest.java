@@ -1,8 +1,8 @@
 package com.afs.restapi.test;
 
 import com.afs.restapi.entity.Location;
-import com.afs.restapi.mappers.LocationMapper;
-import com.afs.restapi.mappers.LocationResponse;
+import com.afs.restapi.mappers.location.LocationMapper;
+import com.afs.restapi.mappers.location.LocationResponse;
 import com.afs.restapi.repository.LocationRepository;
 import com.afs.restapi.service.LocationService;
 import org.junit.jupiter.api.Test;
