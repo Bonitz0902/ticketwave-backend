@@ -37,10 +37,10 @@ public class MovieServiceTest {
     }
 
     @Test
-    void should_return_movies_when_get_all_given_some_movies(){
+    void should_return_movies_when_get_all_given_some_movies() {
         // Given
         List<Movie> allMovies = new ArrayList<>();
-        allMovies.add(new Movie(1L, "Avengers", true, "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", "something",4.0, "qwerty","qwerywr", "qwerty", new BigDecimal("400.00")));
+        allMovies.add(new Movie(1L, "Avengers", true, "https://example.com/avengers.jpg", "Description", 4.0, "Director", "Action", "https://example.com/landscape.jpg", new BigDecimal("400.00")));
 
         // When
         when(movieRepository.findAll()).thenReturn(allMovies);
