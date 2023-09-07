@@ -1,26 +1,23 @@
 package com.afs.restapi.mappers.movieSchedule;
 
 import com.afs.restapi.entity.Cinema;
-import com.afs.restapi.entity.Movie;
 
 import java.util.Date;
 
 public class MovieScheduleResponse {
     private Long scheduleId;
     private Cinema cinema;
-    private Date startDate;
-    private Date endDate;
+    private Date scheduleDate;
     private String startTime;
     private String endTime;
 
     public MovieScheduleResponse(){
     }
 
-    public MovieScheduleResponse(Long id, Cinema cinema, Date startDate, Date endDate, String startTime, String endTime) {
+    public MovieScheduleResponse(Long id, Cinema cinema, Date scheduleDate, String startTime, String endTime) {
         this.scheduleId = id;
         this.cinema = cinema;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.scheduleDate = scheduleDate;
         this.startTime = startTime;
         this.endTime = endTime;
     }
@@ -41,20 +38,12 @@ public class MovieScheduleResponse {
         this.cinema = cinema;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getScheduleDate() {
+        return scheduleDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setScheduleDate(Date scheduleDate) {
+        this.scheduleDate = scheduleDate;
     }
 
     public String getStartTime() {

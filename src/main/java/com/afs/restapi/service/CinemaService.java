@@ -56,4 +56,19 @@ public class CinemaService {
         Movie movie = movieRepository.findById(movieId).orElse(null);
         return (movie != null) ? movie.getMovieTitle() : null;
     }
+
+    public List<CinemaResponse> getAllCinemas() {
+        List<Cinema> cinemas = cinemaRepository.findAll();
+        return cinemas.stream()
+                .map(cinema -> {
+                    CinemaResponse cinemaResponse = cinemaMapper.toResponse(cinema);
+                    cinemaResponse.setLocationName(getLocationNameById(cinema.getLocation().getLocationId()));
+                    cinemaResponse.setMovieTitle(getMovieTitleById(cinema.getMovie().getId()));
+                    cinemaResponse.setLocationId(cinema.getLocation().getLocationId()); // Set locationId
+                    cinemaResponse.setMovieId(cinema.getMovie().getId()); // Set movieId
+                    return cinemaResponse;
+                })
+                .collect(Collectors.toList());
+    }
+
 }

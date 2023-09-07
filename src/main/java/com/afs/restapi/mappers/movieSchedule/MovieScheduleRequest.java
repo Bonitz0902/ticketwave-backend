@@ -5,17 +5,15 @@ import java.util.Date;
 public class MovieScheduleRequest {
     private Long scheduleId;
     private Long cinemaId;
-    private Date startDate;
-    private Date endDate;
+    private Date scheduleDate;
     private String startTime;
     private String endTime;
 
 
-    public MovieScheduleRequest(Long scheduleId, Long cinemaId,  Date startDate, Date endDate, String startTime, String endTime) {
+    public MovieScheduleRequest(Long scheduleId, Long cinemaId, Date scheduleDate, String startTime, String endTime) {
         this.scheduleId = scheduleId;
         this.cinemaId = cinemaId;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.scheduleDate = scheduleDate;
         this.startTime = startTime;
         this.endTime = endTime;
     }
@@ -28,20 +26,12 @@ public class MovieScheduleRequest {
         this.cinemaId = cinemaId;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getScheduleDate() {
+        return scheduleDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setScheduleDate(Date scheduleDate) {
+        this.scheduleDate = scheduleDate;
     }
 
     public String getStartTime() {

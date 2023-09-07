@@ -6,6 +6,8 @@ public class CinemaResponse {
     private String locationName;
     private String movieTitle;
     private String cinemaName;
+    private Long locationId;
+    private Long movieId;
 
     public CinemaResponse() {
     }
@@ -47,5 +49,21 @@ public class CinemaResponse {
 
     public void setMovieTitle(String movieTitle) {
         this.movieTitle = movieTitle;
+    }
+
+    public Long getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Long locationId) {
+        this.locationId = locationId;
+    }
+
+    public Long getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
     }
 }

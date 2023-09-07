@@ -24,4 +24,9 @@ public class CinemaController {
     ) {
         return cinemaService.getCinemasByLocationAndMovie(locationId, movieId);
     }
+
+    @GetMapping
+    public List<CinemaResponse> getAllCinemas() {
+        return cinemaService.getAllCinemas();
+    }
 }

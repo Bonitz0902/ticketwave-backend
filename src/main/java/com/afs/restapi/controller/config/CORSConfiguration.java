@@ -1,4 +1,4 @@
-package com.afs.restapi.config;
+package com.afs.restapi.controller.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

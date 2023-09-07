@@ -15,11 +15,8 @@ public class MovieSchedule {
     private Cinema cinema;
 
 
-    @Column(name = "start_date")
-    private Date startDate;
-
-    @Column(name = "end_date")
-    private Date endDate;
+    @Column(name = "schedule_date")
+    private Date scheduleDate;
 
     @Column(name = "start_time")
     private String startTime;
@@ -31,11 +28,10 @@ public class MovieSchedule {
     }
 
 
-    public MovieSchedule(Long scheduleId, Cinema cinema, Date startDate, Date endDate, String startTime, String endTime) {
+    public MovieSchedule(Long scheduleId, Cinema cinema, Date scheduleDate, String startTime, String endTime) {
         this.scheduleId = scheduleId;
         this.cinema = cinema;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.scheduleDate = scheduleDate;
         this.startTime = startTime;
         this.endTime = endTime;
     }
@@ -48,20 +44,12 @@ public class MovieSchedule {
         this.cinema = cinema;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getScheduleDate() {
+        return scheduleDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setScheduleDate(Date scheduleDate) {
+        this.scheduleDate = scheduleDate;
     }
 
     public String getStartTime() {
