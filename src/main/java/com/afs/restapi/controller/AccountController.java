@@ -6,6 +6,8 @@ import com.afs.restapi.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/account")
 public class AccountController {
@@ -22,10 +24,10 @@ public class AccountController {
         accountService.create(accountRequest);
     }
 
-    @GetMapping("/{accountEmail}")
-    public AccountResponse getAccount(@PathVariable String accountEmail){
-        return accountService.getAccountByEmail(accountEmail);
+    @PostMapping("/login")
+    public AccountResponse getAccount(@RequestBody AccountRequest accountRequest){
+        return accountService.getAccountByEmail(accountRequest.getAccountEmail()
+                ,accountRequest.getAccountPassword());
     }
-
 
 }

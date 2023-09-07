@@ -8,6 +8,8 @@ import com.afs.restapi.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountService {
 
@@ -21,12 +23,16 @@ public class AccountService {
     }
 
     public void create(AccountRequest accountRequest) {
-        Account account = accountMapper.toEntity(accountRequest);
-        accountRepository.save(account);
+        Account accountSave = accountMapper.toEntity(accountRequest);
+        accountRepository.save(accountSave);
     }
 
-    public AccountResponse getAccountByEmail(String name) {
-        Account account = accountRepository.findByAccountEmail(name);
+    public AccountResponse getAccountByEmail(String email, String password) {
+        Account account = accountRepository.findByAccountEmailAndAccountPassword(email, password);
+        if(account == null){
+            return new AccountResponse();
+        }
         return accountMapper.toResponse(account);
     }
+
 }
