@@ -27,12 +27,14 @@ public class AccountService {
         accountRepository.save(accountSave);
     }
 
-    public AccountResponse getAccountByEmail(String email, String password) {
+    public String getAccountByEmail(String email, String password) {
         Account account = accountRepository.findByAccountEmailAndAccountPassword(email, password);
         if(account == null){
-            return new AccountResponse();
+            return new AccountResponse().getAccountEmail();
         }
-        return accountMapper.toResponse(account);
+        AccountResponse accountResponse =  accountMapper.toResponse(account);
+
+        return accountResponse.getAccountEmail();
     }
 
 }
