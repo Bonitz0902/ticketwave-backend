@@ -52,4 +52,11 @@ public class SeatingController {
         seatingService.deleteSeating(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/book")
+    public ResponseEntity<List<SeatingResponse>> bookMultipleSeatings(@RequestBody List<Long> seatingIds) {
+        List<SeatingResponse> bookedSeatings = seatingService.bookMultipleSeatings(seatingIds);
+        return ResponseEntity.ok(bookedSeatings);
+    }
+
 }

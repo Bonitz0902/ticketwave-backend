@@ -55,6 +55,16 @@ public class SeatingService {
         List<Seating> seatings = seatingRepository.findAll();
         return seatingMapper.toResponseList(seatings);
     }
+
+    public List<SeatingResponse> bookMultipleSeatings(List<Long> seatingIds) {
+        List<Seating> seatings = seatingRepository.findAllByIdIn(seatingIds);
+
+        seatings.forEach(seating -> seating.setAvailable(false));
+        seatings = seatingRepository.saveAll(seatings);
+
+        return seatingMapper.toResponseList(seatings);
+    }
+
 }
 
 
