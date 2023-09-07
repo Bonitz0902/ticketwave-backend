@@ -7,5 +7,6 @@ CREATE TABLE movies (
     rating FLOAT(9),
     director VARCHAR(255),
     genre VARCHAR(255),
-    image_url_landscape VARCHAR(255)
+    image_url_landscape VARCHAR(255),
+    price DECIMAL(10, 2) NOT NULL
 );

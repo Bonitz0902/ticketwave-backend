@@ -1,6 +1,7 @@
 package com.afs.restapi.entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity(name = "movies")
 public class Movie {
@@ -18,10 +19,13 @@ public class Movie {
 
     private String imageUrlLandscape;
 
+    @Column(name = "price", precision = 10, scale = 2)
+    private BigDecimal price;
+
     public Movie() {
     }
 
-    public Movie(Long id, String movieTitle, boolean isAvailable, String imageUrl, String description, double rating, String director, String genre, String imageUrlLandscape) {
+    public Movie(Long id, String movieTitle, boolean isAvailable, String imageUrl, String description, double rating, String director, String genre, String imageUrlLandscape, BigDecimal price) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.isAvailable = isAvailable;
@@ -31,6 +35,7 @@ public class Movie {
         this.director = director;
         this.genre = genre;
         this.imageUrlLandscape = imageUrlLandscape;
+        this.price = price;
     }
 
     public String getMovieTitle() {
@@ -103,5 +108,13 @@ public class Movie {
 
     public void setImageUrlLandscape(String imageUrlLandscape) {
         this.imageUrlLandscape = imageUrlLandscape;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

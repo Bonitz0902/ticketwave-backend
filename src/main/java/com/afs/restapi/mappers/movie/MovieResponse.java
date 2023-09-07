@@ -1,5 +1,7 @@
 package com.afs.restapi.mappers.movie;
 
+import java.math.BigDecimal;
+
 public class MovieResponse {
 
     private Long id;
@@ -10,11 +12,12 @@ public class MovieResponse {
     private String director;
     private String genre;
     private String imageUrlLandscape;
+    private BigDecimal price;
 
     public MovieResponse(){
     }
 
-    public MovieResponse(Long id, String movieTitle, String imageUrl, String description, Double rating, String director, String genre, String imageUrlLandscape) {
+    public MovieResponse(Long id, String movieTitle, String imageUrl, String description, Double rating, String director, String genre, String imageUrlLandscape, BigDecimal price) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.imageUrl = imageUrl;
@@ -23,6 +26,7 @@ public class MovieResponse {
         this.director = director;
         this.genre = genre;
         this.imageUrlLandscape = imageUrlLandscape;
+        this.price = price;
     }
 
     public String getMovieTitle() {
@@ -87,5 +91,13 @@ public class MovieResponse {
 
     public void setImageUrlLandscape(String imageUrlLandscape) {
         this.imageUrlLandscape = imageUrlLandscape;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
