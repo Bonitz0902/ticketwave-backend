@@ -25,7 +25,7 @@ public class AccountController {
     }
 
     @PostMapping("/login")
-    public AccountResponse getAccount(@RequestBody AccountRequest accountRequest){
+    public String getAccount(@RequestBody AccountRequest accountRequest){
         return accountService.getAccountByEmail(accountRequest.getAccountEmail()
                 ,accountRequest.getAccountPassword());
     }
