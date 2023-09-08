@@ -40,14 +40,12 @@ public class SeatingService {
 
     public void deleteSeating(Long seatingId) {
         seatingRepository.findById(seatingId).orElseThrow(() -> new SeatingNotFoundException(seatingId));
-
         seatingRepository.deleteById(seatingId);
     }
 
     public SeatingResponse getSeatingById(Long seatingId) {
         Seating seating = seatingRepository.findById(seatingId)
                 .orElseThrow(() -> new SeatingNotFoundException(seatingId));
-
         return seatingMapper.toResponse(seating);
     }
 
@@ -56,13 +54,17 @@ public class SeatingService {
         return seatingMapper.toResponseList(seatings);
     }
 
-    public List<SeatingResponse> bookMultipleSeatings(List<Long> seatingIds) {
+    public List<SeatingResponse> bookMultipleSeats(List<Long> seatingIds) {
         List<Seating> seatings = seatingRepository.findAllByIdIn(seatingIds);
         seatings.forEach(seating -> seating.setAvailable(false));
         seatings = seatingRepository.saveAll(seatings);
         return seatingMapper.toResponseList(seatings);
     }
 
+    public boolean areSeatsAvailable(List<Long> seatingIds) {
+        Long count = seatingRepository.countAllByIsAvailableTrueAndSeatingIdIn(seatingIds);
+        return count != null && count.equals((long) seatingIds.size());
+    }
 }
 
 

@@ -13,4 +13,5 @@ public interface SeatingRepository extends JpaRepository<Seating, Long> {
 
     @Query("SELECT s FROM Seating s WHERE s.seatingId IN :seatingIds")
     List<Seating> findAllByIdIn(List<Long> seatingIds);
+    Long countAllByIsAvailableTrueAndSeatingIdIn(List<Long> seatingIds);
 }

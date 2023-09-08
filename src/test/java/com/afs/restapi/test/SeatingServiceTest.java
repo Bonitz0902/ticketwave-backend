@@ -142,10 +142,4 @@ class SeatingServiceTest {
         assertThat(allSeatings).isNotNull();
         assertThat(allSeatings).hasSize(2);
     }
-
-
-
-
-
-
 }

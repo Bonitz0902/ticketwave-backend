@@ -53,10 +53,20 @@ public class SeatingController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/book")
+    @PostMapping("/book-multiple-seats")
     public ResponseEntity<List<SeatingResponse>> bookMultipleSeatings(@RequestBody List<Long> seatingIds) {
-        List<SeatingResponse> bookedSeatings = seatingService.bookMultipleSeatings(seatingIds);
+        List<SeatingResponse> bookedSeatings = seatingService.bookMultipleSeats(seatingIds);
         return ResponseEntity.ok(bookedSeatings);
     }
 
+    // New endpoint for confirming bookings
+    @PostMapping("/confirm-booking")
+    public ResponseEntity<String> confirmBooking(@RequestBody List<Long> seatingIds) {
+        if (seatingService.areSeatsAvailable(seatingIds)) {
+            return ResponseEntity.ok("Booking confirmed");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Seats are not available for booking.");
+        }
+    }
 }
+
