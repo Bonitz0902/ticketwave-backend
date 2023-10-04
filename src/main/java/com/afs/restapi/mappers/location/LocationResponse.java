@@ -6,6 +6,7 @@ public class LocationResponse {
     private String locationName;
 
     public LocationResponse(){
+        //Empty constructor
     }
 
     public LocationResponse(Long locationId, String locationName) {

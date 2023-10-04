@@ -2,6 +2,16 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.13'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id "org.sonarqube" version "4.2.1.3168"
+}
+
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'SonarQubeDemo'
+        property 'sonar.projectKey', 'SonarQubeDemo'
+        property 'sonar.host.url', 'http://localhost:9000'
+        property 'sonar.token', 'sqp_f775b59a6a9aca1551bd2095c1024cf7ecd98638'
+    }
 }
 
 group = 'com.afs'

@@ -1,14 +1,13 @@
 package com.afs.restapi.controller;
 
 import com.afs.restapi.entity.BookingReceipt;
-import com.afs.restapi.mappers.bookingReceipt.BookingReceiptResponse;
+import com.afs.restapi.mappers.bookingreceipt.BookingReceiptResponse;
 import com.afs.restapi.service.BookingReceiptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -28,8 +27,7 @@ public class BookingReceiptController {
 
     @GetMapping("/{id}")
     public BookingReceiptResponse getBookingReceiptById(@PathVariable Long id) {
-        BookingReceiptResponse bookingReceipt = bookingReceiptService.getBookingReceiptById(id);
-        return bookingReceipt;
+        return bookingReceiptService.getBookingReceiptById(id);
     }
 
     @PostMapping

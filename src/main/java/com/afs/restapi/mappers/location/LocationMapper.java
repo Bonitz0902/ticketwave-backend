@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class LocationMapper {
 
     public LocationMapper(){
+        //empty Constructor
     }
 
     public LocationResponse toResponse(Location location) {

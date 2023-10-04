@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers.bookingReceipt;
+package com.afs.restapi.mappers.bookingreceipt;
 
 import com.afs.restapi.entity.Account;
 import com.afs.restapi.entity.BookingReceipt;
@@ -22,7 +22,7 @@ public class BookingReceiptMapper {
     @Autowired
     private CinemaRepository cinemaRepository;
     public BookingReceiptMapper(){
-
+        //Empty constructor
     }
 
     public BookingReceiptResponse toResponse(BookingReceipt bookingReceipt){

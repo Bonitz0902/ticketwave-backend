@@ -74,7 +74,7 @@ class SeatingServiceTest {
     }
 
     @Test
-    public void testDeleteSeating() {
+    void testDeleteSeating() {
         Long seatingId = 1L;
         when(seatingRepository.findById(seatingId)).thenReturn(Optional.of(new Seating()));
 
@@ -82,7 +82,7 @@ class SeatingServiceTest {
     }
 
     @Test
-    public void testDeleteSeatingNotFound() {
+    void testDeleteSeatingNotFound() {
         Long seatingId = 1L;
         when(seatingRepository.findById(seatingId)).thenReturn(Optional.empty());
 
@@ -90,7 +90,7 @@ class SeatingServiceTest {
     }
 
     @Test
-    public void should_update_seating() {
+    void should_update_seating() {
         // Arrange
         Long seatingId = 1L;
         SeatingRequest request = new SeatingRequest(1L, Collections.singletonList("A1"), true);
@@ -110,7 +110,7 @@ class SeatingServiceTest {
     }
 
     @Test
-    public void should_throw_seating_not_found_exception_when_updating() {
+    void should_throw_seating_not_found_exception_when_updating() {
         // Arrange
         Long seatingId = 1L;
         SeatingRequest request = new SeatingRequest(1L, Collections.singletonList("A1"), true);

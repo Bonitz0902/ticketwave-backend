@@ -1,7 +1,5 @@
 package com.afs.restapi.entity;
 
-import com.afs.restapi.controller.BookingReceiptController;
-
 import javax.persistence.*;
 
 @Entity

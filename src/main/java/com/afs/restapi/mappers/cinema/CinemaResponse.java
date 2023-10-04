@@ -12,7 +12,7 @@ public class CinemaResponse {
     public CinemaResponse() {
     }
 
-    public CinemaResponse(Long cinemaId, Long locationId, Long movieId, String cinemaName, String locationName, String movieTitle) {
+    public CinemaResponse(Long cinemaId, String cinemaName, String locationName, String movieTitle) {
         this.cinemaId = cinemaId;
         this.cinemaName = cinemaName;
         this.locationName = locationName;

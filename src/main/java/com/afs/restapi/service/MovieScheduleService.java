@@ -2,9 +2,9 @@ package com.afs.restapi.service;
 
 import com.afs.restapi.entity.MovieSchedule;
 import com.afs.restapi.exception.MovieScheduleNotFoundException;
-import com.afs.restapi.mappers.movieSchedule.MovieScheduleMapper;
-import com.afs.restapi.mappers.movieSchedule.MovieScheduleRequest;
-import com.afs.restapi.mappers.movieSchedule.MovieScheduleResponse;
+import com.afs.restapi.mappers.movieschedule.MovieScheduleMapper;
+import com.afs.restapi.mappers.movieschedule.MovieScheduleRequest;
+import com.afs.restapi.mappers.movieschedule.MovieScheduleResponse;
 import com.afs.restapi.repository.MovieScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

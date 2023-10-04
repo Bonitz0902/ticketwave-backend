@@ -1,13 +1,13 @@
 package com.afs.restapi.service;
 
 import com.afs.restapi.entity.BookingReceipt;
-import com.afs.restapi.mappers.bookingReceipt.BookingReceiptMapper;
-import com.afs.restapi.mappers.bookingReceipt.BookingReceiptResponse;
+import com.afs.restapi.mappers.bookingreceipt.BookingReceiptMapper;
+import com.afs.restapi.mappers.bookingreceipt.BookingReceiptResponse;
 import com.afs.restapi.repository.BookingReceiptRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BookingReceiptService {
@@ -26,8 +26,7 @@ public class BookingReceiptService {
 
     public BookingReceiptResponse getBookingReceiptById(Long id) {
         BookingReceipt bookingReceipt = bookingReceiptRepository.findByBookingId(id);
-        BookingReceiptResponse bookingReceiptResponse = bookingReceiptMapper.toResponse(bookingReceipt);
-        return bookingReceiptResponse;
+        return bookingReceiptMapper.toResponse(bookingReceipt);
     }
 
     public BookingReceipt createBookingReceipt(BookingReceipt bookingReceipt) {

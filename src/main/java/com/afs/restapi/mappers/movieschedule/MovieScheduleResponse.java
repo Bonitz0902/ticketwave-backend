@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers.movieSchedule;
+package com.afs.restapi.mappers.movieschedule;
 
 import com.afs.restapi.entity.Cinema;
 
@@ -12,6 +12,7 @@ public class MovieScheduleResponse {
     private String endTime;
 
     public MovieScheduleResponse(){
+        //empty Constructor
     }
 
     public MovieScheduleResponse(Long id, Cinema cinema, Date scheduleDate, String startTime, String endTime) {

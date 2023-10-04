@@ -8,7 +8,9 @@ public class SeatingRequest {
 
     private boolean isAvailable;
 
-    public SeatingRequest(){}
+    public SeatingRequest(){
+        //empty Constructor
+    }
 
     public SeatingRequest(Long scheduleId, List<String> seatNumbers, boolean isAvailable) {
         this.scheduleId = scheduleId;

@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers.movieSchedule;
+package com.afs.restapi.mappers.movieschedule;
 
 import java.util.Date;
 

@@ -13,7 +13,7 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-public class AccountServiceTest {
+class AccountServiceTest {
 
     private AccountService accountService;
 
@@ -27,7 +27,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void should_create_account() {
+    void should_create_account() {
         AccountRequest accountRequest = new AccountRequest("John Doe", "johndoe@example.com", "password");
         Account account = new Account( "John Doe", "johndoe@example.com", "password");
 
@@ -39,7 +39,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void should_return_account_email_when_account_exists() {
+    void should_return_account_email_when_account_exists() {
         String email = "johndoe@example.com";
         String password = "password";
         Account account = new Account( "John Doe", email, password);
@@ -52,7 +52,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void should_return_empty_string_when_account_not_found() {
+    void should_return_empty_string_when_account_not_found() {
         String email = "nonexistent@example.com";
         String password = "password";
 

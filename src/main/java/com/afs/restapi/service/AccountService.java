@@ -8,8 +8,6 @@ import com.afs.restapi.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class AccountService {
 
@@ -29,10 +27,10 @@ public class AccountService {
 
     public String getAccountByEmail(String email, String password) {
         Account account = accountRepository.findByAccountEmailAndAccountPassword(email, password);
-        if(account == null){
+        if (account == null) {
             return new AccountResponse().getAccountEmail();
         }
-        AccountResponse accountResponse =  accountMapper.toResponse(account);
+        AccountResponse accountResponse = accountMapper.toResponse(account);
 
         return accountResponse.getAccountEmail();
     }

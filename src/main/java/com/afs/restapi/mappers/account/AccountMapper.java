@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class AccountMapper {
 
     public AccountMapper(){
-
+        //Empty constructor
     }
     public Account toEntity(AccountRequest accountRequest){
         Account account = new Account();

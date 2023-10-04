@@ -1,4 +1,4 @@
-package com.afs.restapi.mappers.bookingReceipt;
+package com.afs.restapi.mappers.bookingreceipt;
 
 public class BookingReceiptResponse {
     private Long bookingId;
@@ -10,9 +10,6 @@ public class BookingReceiptResponse {
     private String cinemaName;
     private String accountName;
     private String movieName;
-    // You can add more details as needed
-
-    // Constructors, getters, and setters
 
     public BookingReceiptResponse() {
     }

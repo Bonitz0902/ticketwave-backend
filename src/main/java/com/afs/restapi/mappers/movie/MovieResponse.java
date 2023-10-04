@@ -15,6 +15,7 @@ public class MovieResponse {
     private BigDecimal price;
 
     public MovieResponse(){
+        //empty Constructor
     }
 
     public MovieResponse(Long id, String movieTitle, String imageUrl, String description, Double rating, String director, String genre, String imageUrlLandscape, BigDecimal price) {

@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 
 
 @SpringBootTest
-public class MovieServiceTest {
+class MovieServiceTest {
 
     @Autowired
     private MovieService movieService;

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class MovieMapper {
 
     private MovieMapper() {
+        //empty Constructor
     }
 
     public static Movie toEntity(MovieRequest movieRequest) {

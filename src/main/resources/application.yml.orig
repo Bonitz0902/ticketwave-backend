@@ -1,0 +1,22 @@
+spring:
+  datasource:
+<<<<<<< Updated upstream
+    url: jdbc:${MYSQL_URL}
+    username: ${MYSQLUSER}
+    password: ${MYSQLPASSWORD}
+=======
+    url: jdbc:mysql://localhost:3306/demo_db?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: jM99165D%$sQ
+
+>>>>>>> Stashed changes
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+  flyway:
+    baseline-on-migrate: true

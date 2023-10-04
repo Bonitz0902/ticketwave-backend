@@ -7,7 +7,9 @@ public class SeatingResponse {
     private String seatNumber;
     private boolean isAvailable;
 
-    public SeatingResponse(){}
+    public SeatingResponse(){
+        //empty Constructor
+    }
 
     public SeatingResponse(Long seatingId, Long scheduleId, String seatNumber, boolean isAvailable) {
         this.seatingId = seatingId;
